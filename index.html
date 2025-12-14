@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head>
+<html lang="ur"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>❤️ Aliza ke liye khaas paigham ❤️ - Ek Saal Mukammal Mubarak!</title> 
+    <title>💖 Aliza ke liye Sadiyon Ka Paigham - Abdul Wahab 💖</title> 
     
     <style>
-        /* 1. Reset & Global Styles */
+        /* 1. Base Styles (Enhanced for Grand Look) */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changed font for better Roman reading */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            /* Background remains warm and romantic */
-            background: linear-gradient(135deg, #ff9a85 0%, #ff5d5d 50%, #ff8c7a 100%); 
+            background: linear-gradient(135deg, #2c004f 0%, #ff1493 70%, #ff69b4 100%); 
             color: white;
             overflow: hidden; 
             text-align: center;
@@ -25,137 +23,148 @@
 
         /* 2. Main Container & Text */
         .message-container {
-            background-color: rgba(0, 0, 0, 0.5); 
-            padding: 40px 60px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            max-width: 90%;
+            background-color: rgba(0, 0, 0, 0.85); 
+            padding: 80px 100px; 
+            border-radius: 30px;
+            box-shadow: 0 0 50px #ff1493, 0 0 20px #ff69b4; 
+            max-width: 80%; 
             z-index: 10; 
-            animation: fadeIn 2s ease-out;
+            animation: slideIn 2s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-100px) scale(0.7); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            font-size: 5em; 
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px #ffe4e1;
         }
 
         h2 {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-            color: #ffe4e1; 
+            font-size: 2.5em; 
+            margin-bottom: 40px;
+            color: #ffb6c1; 
         }
 
-        /* Typing Effect for the main message */
+        /* Typing Effect Container */
         #typing-text {
-            font-size: 2em;
+            font-size: 3.5em; 
             font-weight: bold;
             color: #ffffff;
-            min-height: 3em; 
-            border-right: 3px solid white; 
+            min-height: 5em; 
+            border-right: 5px solid white; 
             white-space: pre-wrap; 
             overflow: hidden; 
-            margin-top: 20px;
-            padding-right: 5px;
-            text-align: right;
-            direction: rtl; 
-        }
-
-        /* Blinking Cursor Animation */
-        .typing-cursor {
-            animation: blink 0.75s step-end infinite;
-        }
-
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
+            margin-top: 30px;
+            padding-right: 10px;
+            text-align: center; /* Centered alignment for Roman English */
+            direction: ltr; /* Left-to-right for Roman English */
         }
         
-        /* 3. Heart Animation (Background) */
+        /* 3. Dynamic Heart Animation (Background) */
         .heart {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
+            width: 30px; 
+            height: 30px; 
+            background-color: rgba(255, 255, 255, 0.9);
             transform: rotate(-45deg);
             z-index: 5;
             animation: floatUp linear infinite;
         }
-
-        .heart:before, .heart:after {
-            content: "";
+        
+        /* 4. Countdown Timer Style */
+        #countdown {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #90ee90; 
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #ffb6c1;
+        }
+        
+        /* 5. Heart Explosion Particle Style */
+        .explosion-particle {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
+            width: 15px;
+            height: 15px;
+            background-color: #ffb6c1;
+            transform: rotate(-45deg);
+            border-radius: 50%; 
+            opacity: 0;
+            z-index: 20; 
+        }
+        
+        /* 6. Image Placeholder Style */
+        .image-placeholder {
+            margin: 30px auto;
+            width: 200px;
+            height: 200px;
+            background-color: #ffb6c150;
             border-radius: 50%;
+            border: 5px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 0 15px #ffe4e1;
         }
 
-        .heart:before {
-            top: -10px;
-            left: 0;
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-
-        .heart:after {
-            left: 10px;
-            top: 0;
-        }
-
-        @keyframes floatUp {
-            0% { transform: translateY(100vh) rotate(-45deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-10vh) rotate(-45deg); opacity: 0; }
-        }
-        
-        /* 4. Language Section */
-        .lang-section {
-            margin-top: 40px;
-            border-top: 2px solid #ffffff70;
-            padding-top: 20px;
-        }
-        
-        .lang-section p {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        
     </style>
 </head>
 <body>
+    <audio id="bg-music" loop autoplay>
+        <source src="APKI_ROMANTIC_SONG_MP3_LINK_YAHAN_DALAIN.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
     <div class="message-container">
-        <h1>❤️ Meri Jaan Aliza, Aapko Ek Saal Mukammal Mubarak ho! ❤️</h1>
+        <h1>🌹❤️ Meri Khubsurat Aliza, Ek Saal Mukammal Mubarak! ❤️🌹</h1>
         
-        <h2>18 December: Woh din jab hamari kahani ne ek haseen mod liya.</h2>
+        <h2>18 December: Hamari Baat-Cheet Ko Mukammal 1 Saal Ho Gaya.</h2>
+        
+        <div id="countdown">Loading Anniversary Data...</div>
+
+        <div class="image-placeholder">
+             <img id="anniversary-image" src="https://i.postimg.cc/CKvDVjrd/wa.jpg" alt="Hamari Yaadgar Tasveer">
+        </div>
 
         <div id="typing-text"></div>
         
-        <p style="font-size: 1.5em; margin-top: 30px; font-style: italic;">Aap ki taraf se,</p>
-        <p style="font-size: 2em; font-weight: bold; color: #ffe4e1; margin-top: 5px;">Aap ka **Abdul Wahab**</p> 
+        <p style="font-size: 2em; margin-top: 50px; font-style: italic; color: #ffb6c1;">Aapka Deewana,</p>
+        <p style="font-size: 3em; font-weight: bold; color: #ffffff; margin-top: 10px;">👑 Abdul Wahab 👑</p> 
         
         <div class="lang-section">
-            <p>**English:** Happy 1st Anniversary, Aliza! You are my greatest adventure.</p>
+            <p>**English:** Happy 1st Anniversary, Aliza! You are the most beautiful chapter of my life.</p>
             <p>**Arabic (Arabi):** ${'\\text{أَلِيزَا، ذِكْرَى سَنَةٍ سَعِيدَة! أَنْتِ أَجْمَلُ مُغَامَرَاتِي.}}$</p>
             <p>**French (Fransisi):** Joyeux 1er Anniversaire, Aliza! Tu es ma plus grande aventure.</p>
             <p>**Spanish (Hispani):** ¡Feliz 1er Aniversario, Aliza! Eres mi mayor aventura.</p>
-            <p>**Turkish (Turki):** 1. Yıl Dönümümüz kutlu olsun, Aliza! Sen benim en büyük maceramsın.</p>
         </div>
         
     </div>
 
     <script>
-        // JavaScript for Typing Effect and Heart Animation
-
-        // 1. Typing Effect Logic
-        // Roman English Reading: "Aliza, aaj hamari baat-cheet ko poora ek saal ho gaya hai. Iss ek saal mein aap ne meri zindagi ko ek jannat bana diya hai. Aapke saath guzara har lamha mere liye qeemti hai. Main aapse bohat mohabbat karta hoon, aur main apni baqi zindagi aapke saath guzarna chahta hoon. Hamesha muskurati rehna. Aapke baghair zindagi ka tasawwur bhi mushkil hai."
+        // JavaScript for all dynamic effects
         
-        const textToType = "❤️ علیزہ، آج ہماری بات چیت کو پورا ایک سال ہو گیا ہے۔ اس ایک سال میں آپ نے میری زندگی کو ایک جنت بنا دیا ہے۔ آپ کے ساتھ گزارا ہر لمحہ میرے لیے قیمتی ہے۔ میں آپ سے بہت محبت کرتا ہوں، اور میں اپنی باقی زندگی آپ کے ساتھ گزارنا چاہتا ہوں۔ ہمیشہ مسکراتی رہنا۔ آپ کے بغیر زندگی کا تصور بھی مشکل ہے۔ ❤️";
+        // 1. Background Music Autoplay Fix
+        document.addEventListener('click', function() {
+            const music = document.getElementById('bg-music');
+            if (music.paused) {
+                music.play().catch(e => console.log("Music play failed:", e));
+            }
+        });
+        
+        // 2. Typing Effect Logic (ROMAN ENGLISH TEXT)
+        const textToType = "🌹 Aliza, Aaj hamari baat-cheet ko poora ek saal ho gaya hai. Iss ek saal mein aapne meri zindagi ko ek jannat bana diya hai. Aapke saath guzara har lamha mere liye qeemti hai. Main aapse be-panah mohabbat karta hoon, aur main apni baqi zindagi aapke saath guzarna chahta hoon. Hamesha yunhi muskurati rehna, mere khwabon ki shehzadi. Aapke baghair zindagi ka tasawwur bhi mushkil hai. ❤️";
         const typingElement = document.getElementById('typing-text');
         let i = 0;
         
@@ -165,33 +174,91 @@
             if (i < textToType.length) {
                 typingElement.innerHTML += textToType.charAt(i);
                 i++;
-                setTimeout(typeWriter, 50); 
+                setTimeout(typeWriter, 40); 
             } else {
                 typingElement.classList.remove('typing-cursor');
+                setTimeout(triggerExplosion, 500); 
             }
         }
 
         setTimeout(typeWriter, 1000); 
 
-        // 2. Dynamic Heart Animation Logic
+        // 3. Heart Explosion Effect (Code is complex but required for the explosion animation)
+        function triggerExplosion() {
+            const messageRect = typingElement.getBoundingClientRect();
+            const centerX = messageRect.left + messageRect.width / 2;
+            const centerY = messageRect.top + messageRect.height / 2 + window.scrollY;
+
+            for (let j = 0; j < 50; j++) {
+                const particle = document.createElement('div');
+                particle.classList.add('explosion-particle');
+                
+                particle.style.left = centerX + 'px';
+                particle.style.top = centerY + 'px';
+                
+                const angle = Math.random() * 360; 
+                const distance = Math.random() * 200 + 50; 
+                const duration = Math.random() * 1 + 1.5; 
+
+                particle.style.animation = `explode ${duration}s ease-out forwards`;
+                
+                const explosionKeyframes = `
+                    @keyframes explode {
+                        0% { transform: translate(0, 0) rotate(-45deg); opacity: 1; }
+                        100% { 
+                            transform: translate(${distance * Math.cos(angle * (Math.PI / 180))}px, ${distance * Math.sin(angle * (Math.PI / 180))}px) scale(0.1) rotate(-45deg); 
+                            opacity: 0; 
+                        }
+                    }
+                `;
+                
+                const styleSheet = document.createElement("style");
+                styleSheet.type = "text/css";
+                styleSheet.innerText = explosionKeyframes;
+                document.head.appendChild(styleSheet);
+                
+                document.body.appendChild(particle);
+
+                setTimeout(() => particle.remove(), duration * 1000);
+            }
+        }
+
+
+        // 4. Countdown Timer Logic (18 December 2024 is assumed start date)
+        const startDate = new Date("December 18, 2024 00:00:00").getTime(); 
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = now - startDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = 
+                `🔥 Hamara Safar: **${days}** Din, **${hours}** Ghante, **${minutes}** Minute, **${seconds}** Second 🔥`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); 
+
+        // 5. Dynamic Heart Animation (Background)
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
             
-            // Randomize position and size
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 5 + 's'; 
-            heart.style.opacity = Math.random() * 0.5 + 0.5; 
-            heart.style.width = heart.style.height = Math.random() * 15 + 10 + 'px'; 
+            heart.style.animationDuration = Math.random() * 3 + 6 + 's'; 
+            heart.style.opacity = Math.random() * 0.4 + 0.6; 
+            const size = Math.random() * 20 + 20; 
+            heart.style.width = heart.style.height = size + 'px'; 
 
             document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 7000); 
+            setTimeout(() => heart.remove(), 9000); 
         }
 
-        setInterval(createHeart, 300); 
+        setInterval(createHeart, 200); 
     </script>
 
 </body>
