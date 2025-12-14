@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="ur"> <head>
+<html lang="ur"> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💖 Aliza ke liye Sadiyon Ka Paigham - Abdul Wahab 💖</title> 
     
     <style>
-        /* 1. Base Styles (Enhanced for Grand Look) */
+        /* 1. Base Styles (Corrected for Scrolling) */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changed font for better Roman reading */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             display: flex;
-            justify-content: center;
-            align-items: center;
+            /* Changed alignment to start from top, so scrolling works better */
+            justify-content: center; 
+            align-items: flex-start; /* IMPORTANT CHANGE: Start alignment from top */
             min-height: 100vh;
             background: linear-gradient(135deg, #2c004f 0%, #ff1493 70%, #ff69b4 100%); 
             color: white;
-            overflow: hidden; 
+            /* IMPORTANT CHANGE: Allow vertical scroll, hide horizontal scroll */
+            overflow-y: auto; 
+            overflow-x: hidden; 
             text-align: center;
             position: relative;
+            padding-top: 50px; /* Add some space at the top */
+            padding-bottom: 50px; /* Add some space at the bottom */
         }
 
         /* 2. Main Container & Text */
@@ -30,6 +36,9 @@
             max-width: 80%; 
             z-index: 10; 
             animation: slideIn 2s ease-out;
+            /* Remove fixed height so it expands with content */
+            margin-top: 50px; /* Add top margin */
+            margin-bottom: 50px; /* Add bottom margin */
         }
 
         @keyframes slideIn {
@@ -60,13 +69,13 @@
             overflow: hidden; 
             margin-top: 30px;
             padding-right: 10px;
-            text-align: center; /* Centered alignment for Roman English */
-            direction: ltr; /* Left-to-right for Roman English */
+            text-align: center; 
+            direction: ltr; 
         }
         
-        /* 3. Dynamic Heart Animation (Background) */
+        /* 3. Dynamic Heart Animation (Background) - Position changed to 'fixed' */
         .heart {
-            position: absolute;
+            position: fixed; /* IMPORTANT CHANGE: Fixed so hearts stay relative to viewport, not document scroll */
             width: 30px; 
             height: 30px; 
             background-color: rgba(255, 255, 255, 0.9);
@@ -135,7 +144,7 @@
         <div id="countdown">Loading Anniversary Data...</div>
 
         <div class="image-placeholder">
-             <img id="anniversary-image" src="https://i.postimg.cc/CKvDVjrd/wa.jpg" alt="Hamari Yaadgar Tasveer">
+             <img id="anniversary-image" src="APKI_AUR_ALIZA_KI_PICTURE_LINK.jpg" alt="Hamari Yaadgar Tasveer">
         </div>
 
         <div id="typing-text"></div>
@@ -183,7 +192,7 @@
 
         setTimeout(typeWriter, 1000); 
 
-        // 3. Heart Explosion Effect (Code is complex but required for the explosion animation)
+        // 3. Heart Explosion Effect
         function triggerExplosion() {
             const messageRect = typingElement.getBoundingClientRect();
             const centerX = messageRect.left + messageRect.width / 2;
