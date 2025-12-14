@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Aliza ke liye khaas paigham ❤️ - Ek Saal Mukammal Mubarak!</title> 
+    
+    <style>
+        /* 1. Reset & Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Background remains warm and romantic */
+            background: linear-gradient(135deg, #ff9a85 0%, #ff5d5d 50%, #ff8c7a 100%); 
+            color: white;
+            overflow: hidden; 
+            text-align: center;
+            position: relative;
+        }
+
+        /* 2. Main Container & Text */
+        .message-container {
+            background-color: rgba(0, 0, 0, 0.5); 
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+            z-index: 10; 
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #ffe4e1; 
+        }
+
+        /* Typing Effect for the main message */
+        #typing-text {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffffff;
+            min-height: 3em; 
+            border-right: 3px solid white; 
+            white-space: pre-wrap; 
+            overflow: hidden; 
+            margin-top: 20px;
+            padding-right: 5px;
+            text-align: right;
+            direction: rtl; 
+        }
+
+        /* Blinking Cursor Animation */
+        .typing-cursor {
+            animation: blink 0.75s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+        
+        /* 3. Heart Animation (Background) */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: rotate(-45deg);
+            z-index: 5;
+            animation: floatUp linear infinite;
+        }
+
+        .heart:before, .heart:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 10px;
+            top: 0;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(-45deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(-45deg); opacity: 0; }
+        }
+        
+        /* 4. Language Section */
+        .lang-section {
+            margin-top: 40px;
+            border-top: 2px solid #ffffff70;
+            padding-top: 20px;
+        }
+        
+        .lang-section p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="message-container">
+        <h1>❤️ Meri Jaan Aliza, Aapko Ek Saal Mukammal Mubarak ho! ❤️</h1>
+        
+        <h2>18 December: Woh din jab hamari kahani ne ek haseen mod liya.</h2>
+
+        <div id="typing-text"></div>
+        
+        <p style="font-size: 1.5em; margin-top: 30px; font-style: italic;">Aap ki taraf se,</p>
+        <p style="font-size: 2em; font-weight: bold; color: #ffe4e1; margin-top: 5px;">Aap ka **Abdul Wahab**</p> 
+        
+        <div class="lang-section">
+            <p>**English:** Happy 1st Anniversary, Aliza! You are my greatest adventure.</p>
+            <p>**Arabic (Arabi):** ${'\\text{أَلِيزَا، ذِكْرَى سَنَةٍ سَعِيدَة! أَنْتِ أَجْمَلُ مُغَامَرَاتِي.}}$</p>
+            <p>**French (Fransisi):** Joyeux 1er Anniversaire, Aliza! Tu es ma plus grande aventure.</p>
+            <p>**Spanish (Hispani):** ¡Feliz 1er Aniversario, Aliza! Eres mi mayor aventura.</p>
+            <p>**Turkish (Turki):** 1. Yıl Dönümümüz kutlu olsun, Aliza! Sen benim en büyük maceramsın.</p>
+        </div>
+        
+    </div>
+
+    <script>
+        // JavaScript for Typing Effect and Heart Animation
+
+        // 1. Typing Effect Logic
+        // Roman English Reading: "Aliza, aaj hamari baat-cheet ko poora ek saal ho gaya hai. Iss ek saal mein aap ne meri zindagi ko ek jannat bana diya hai. Aapke saath guzara har lamha mere liye qeemti hai. Main aapse bohat mohabbat karta hoon, aur main apni baqi zindagi aapke saath guzarna chahta hoon. Hamesha muskurati rehna. Aapke baghair zindagi ka tasawwur bhi mushkil hai."
+        
+        const textToType = "❤️ علیزہ، آج ہماری بات چیت کو پورا ایک سال ہو گیا ہے۔ اس ایک سال میں آپ نے میری زندگی کو ایک جنت بنا دیا ہے۔ آپ کے ساتھ گزارا ہر لمحہ میرے لیے قیمتی ہے۔ میں آپ سے بہت محبت کرتا ہوں، اور میں اپنی باقی زندگی آپ کے ساتھ گزارنا چاہتا ہوں۔ ہمیشہ مسکراتی رہنا۔ آپ کے بغیر زندگی کا تصور بھی مشکل ہے۔ ❤️";
+        const typingElement = document.getElementById('typing-text');
+        let i = 0;
+        
+        typingElement.classList.add('typing-cursor');
+
+        function typeWriter() {
+            if (i < textToType.length) {
+                typingElement.innerHTML += textToType.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50); 
+            } else {
+                typingElement.classList.remove('typing-cursor');
+            }
+        }
+
+        setTimeout(typeWriter, 1000); 
+
+        // 2. Dynamic Heart Animation Logic
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            
+            // Randomize position and size
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 5 + 's'; 
+            heart.style.opacity = Math.random() * 0.5 + 0.5; 
+            heart.style.width = heart.style.height = Math.random() * 15 + 10 + 'px'; 
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000); 
+        }
+
+        setInterval(createHeart, 300); 
+    </script>
+
+</body>
+</html>
